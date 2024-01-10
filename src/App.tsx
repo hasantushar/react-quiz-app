@@ -1,4 +1,3 @@
-// import './App.css'
 import Router from './routes';
 import '@mantine/core/styles.css';
 import { MantineProvider } from '@mantine/core';
