@@ -11,6 +11,7 @@ function Questions() {
     const [questionInput, setQuestionInput] = useState('');
 
     const [opened, { open, close }] = useDisclosure(false);
+    const [selectedQuestionIndex, setSelectedQuestionIndex] = useState(0);
 
     const deleteHandler = (index: number) => {
         let newArr = [...items]
@@ -25,15 +26,13 @@ function Questions() {
         setQuestionInput('')
     }
 
-    let selectedQuestionIndex = 0;
-
-    const modalHandler = (index) => {
-        selectedQuestionIndex = index
+    const modalHandler = (index: number) => {
+        setSelectedQuestionIndex(index)
         open()
         console.log(selectedQuestionIndex)
     }
 
-    const editHandler = (value) => {
+    const editHandler = (value: string) => {
         setQuizItems(
             Object.values({
                 ...items,
