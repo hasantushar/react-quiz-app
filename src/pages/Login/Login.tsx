@@ -6,6 +6,7 @@ import {
     Title,
     Container,
     Button,
+    Text
 } from "@mantine/core";
 import classes from "./Login.module.css";
 import useAuthStore from '@/store/useAuthStore';
@@ -39,7 +40,8 @@ function Login() {
             <Title ta="center" className={classes.title}>
                 Welcome!
             </Title>
-
+            <Text mt='xl'>Username: user or admin</Text>
+            <Text>Password: user or admin</Text>
             <Paper withBorder shadow="md" p={30} mt={30} radius="md">
                 <TextInput value={data.username} name="username" onChange={changeHandler} label="Username" placeholder="Your username" />
                 <PasswordInput

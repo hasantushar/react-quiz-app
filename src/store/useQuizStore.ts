@@ -22,14 +22,14 @@ export interface QuizStore extends QuizState {
 const initialState: Pick<QuizStore, keyof QuizState> = {
     items: [
         {
-            question: "who am i?",
+            question: "Which came first?",
             answer: "",
-            previousAnswers: ["abc", "asd"]
+            previousAnswers: ["Chicken", "Egg"]
         },
         {
-            question: "who are you?",
+            question: "During which war was the Battle of Lundy’s Lane fought?",
             answer: "",
-            previousAnswers: ["abc", "asd"]
+            previousAnswers: ["War of 1812", "Mexican-American War"]
         },
     ]
 };

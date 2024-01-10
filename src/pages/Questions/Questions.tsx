@@ -56,7 +56,6 @@ function Questions() {
     return (
         <>
         <Container className={classes.container}>
-            <>{JSON.stringify(items)}</>
             <TextInput value={questionInput} onChange={(e) => setQuestionInput(e.target.value)} placeholder="Create new question"/>
             <Button mt='sm' onClick={createHandler}>Create</Button>
 
@@ -77,7 +76,7 @@ function Questions() {
         </Container>
 
         <Modal opened={opened} onClose={close} title="Edit Question">
-            <TextInput value={items[selectedQuestionIndex].question} onChange={(e) => editHandler(e.target.value)} />
+            <TextInput value={items[selectedQuestionIndex]?.question} onChange={(e) => editHandler(e.target.value)} />
             <Button mt='sm' onClick={close}>Save & Close</Button>
         </Modal>
 

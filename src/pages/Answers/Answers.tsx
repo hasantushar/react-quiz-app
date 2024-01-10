@@ -1,4 +1,4 @@
-import { Button, Container, List, TextInput } from "@mantine/core";
+import { Button, Container, List, TextInput, Title, Text } from "@mantine/core";
 import classes from "./Answers.module.css";
 import useQuizStore from '@/store/useQuizStore';
 import useAuthStore from "@/store/useAuthStore";
@@ -51,10 +51,16 @@ function Answers() {
 
     return (
         <Container className={classes.container}>
-            <>{JSON.stringify(items)}</>
-            <List withPadding icon={<></>}>
-                {quizListItems}
-            </List>
+            {items && !!items.length ? (
+                <>
+                    <Title order={3} mt='xl'>Answer these question</Title>
+                    <List withPadding icon={<></>}>
+                        {quizListItems}
+                    </List>
+                </>
+            ) : (
+                <Text m='xl'>There is no question! Ask admin to create a few.</Text>
+            )}
             <Button mt='xl' onClick={clearAuthStatus}>Log Out</Button>
         </Container>
     )
